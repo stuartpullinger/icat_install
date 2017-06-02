@@ -207,6 +207,7 @@ ICAT_DATA_DIR=$HOME/icat/data
 ICAT_ARCHIVE_DIR=$HOME/icat/archive
 mkdir -p $ICAT_DATA_DIR
 mkdir -p $ICAT_ARCHIVE_DIR
+mkdir -p $ICAT_DATA_DIR/ids/cache
 echo "dir=$ICAT_DATA_DIR" > $ICAT_INSTALL_DIR/ids.storage_file/ids.storage_file.main.properties
 echo "dir=$ICAT_ARCHIVE_DIR" > $ICAT_INSTALL_DIR/ids.storage_file/ids.storage_file.archive.properties
 
