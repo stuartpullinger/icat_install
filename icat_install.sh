@@ -13,9 +13,6 @@ wget --no-verbose --no-clobber --directory-prefix=/vagrant http://download.java.
 # unzip glassfish
 unzip -o -q /vagrant/glassfish-4.0.zip
 
-# Copy the MySQL Connector jar file - do this before we start glassfish
-cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/domains/localhost/lib/ext/
-
 # add glassfish directory to path - reprovisioning will run this again, adding the same string to the end of the PATH. Probably not good. :(
 echo 'export PATH=$PATH:$HOME/glassfish4/bin' >> $HOME/.bashrc
 source $HOME/.bashrc
@@ -25,6 +22,11 @@ wget --no-verbose --no-clobber --directory-prefix=/vagrant https://icatproject.o
 
 # run glassfish setup script
 python /vagrant/setup-glassfish.py localhost 75% pw
+
+# Copy the MySQL Connector jar file, then restart glassfish so that it is found
+cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/domains/localhost/lib/ext/
+asadmin stop-domain localhost
+asadmin start-domain localhost
 
 #
 # Install ICAT components
@@ -156,7 +158,7 @@ authn.anon.jndi     = java:global/authn.anon-1.1.1/ANON_Authenticator
 authn.anon.friendly = Anonymous
 
 # Uncomment to permit configuration of logback
-logback.xml = icat.logback.xml
+!logback.xml = icat.logback.xml
 
 # Notification setup
 notification.list = Dataset Datafile
@@ -233,7 +235,7 @@ port = 4848
 libraries=ids.storage_file*.jar" > $ICAT_INSTALL_DIR/ids.server/ids-setup.properties
 
 echo "# General properties
-icat.url = http://localhost:8181
+icat.url = http://localhost:8080
 
 plugin.zipMapper.class = org.icatproject.ids.storage.ZipMapper
 
