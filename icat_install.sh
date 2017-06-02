@@ -1,4 +1,4 @@
-!/usr/bin/env bash
+#!/usr/bin/env bash
 
 ICAT_INSTALL_DIR=$HOME/icat_install
 cd $HOME
@@ -15,6 +15,7 @@ unzip -q /vagrant/glassfish-4.0.zip
 
 # add glassfish directory to path - reprovisioning will run this again, adding the same string to the end of the PATH. Probably not good. :(
 echo 'export PATH=$PATH:$HOME/glassfish4/bin' >> $HOME/.bashrc
+source $HOME/.bashrc
 
 # download glassfish setup script
 wget --no-verbose --no-clobber --directory-prefix=/vagrant https://icatproject.org/misc/scripts/setup-glassfish.py
