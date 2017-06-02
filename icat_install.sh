@@ -219,17 +219,13 @@ port = 4848" > $ICAT_INSTALL_DIR/ids.storage_file/ids.storage_file-setup.propert
 
 cd $ICAT_INSTALL_DIR/ids.storage_file
 ./setup configure
-./setup -vv install
+./setup install
 cd $ICAT_INSTALL_DIR
 
 # install the IDS
 wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/ids.server/1.7.0/ids.server-1.7.0-distro.zip
 
 unzip -o -q /vagrant/ids.server-1.7.0-distro.zip
-
-cd $ICAT_INSTALL_DIR/ids.server
-
-mkdir -p $ICAT_DATA_DIR/ids
 
 echo "#Glassfish
 secure = false
@@ -284,6 +280,7 @@ log.list = READ WRITE
 # JMS - uncomment and edit if needed
 !jms.topicConnectionFactory = java:comp/DefaultJMSConnectionFactory" > $ICAT_INSTALL_DIR/ids.server/ids.properties 
 
+cd $ICAT_INSTALL_DIR/ids.server
 ./setup configure
 ./setup install
 cd $ICAT_INSTALL_DIR
