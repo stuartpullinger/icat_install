@@ -32,6 +32,7 @@ cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/do
 # Install ICAT components
 #
 mkdir -p $ICAT_INSTALL_DIR
+cd $ICAT_INSTALL_DIR
 
 #
 # Set up anonymous authentication
@@ -54,7 +55,7 @@ echo "#Glassfish
 ip = 127.0.0.1
 mechanism = anon" > $ICAT_INSTALL_DIR/authn.anon/authn_anon.properties
 
-cd authn.anon
+cd $ICAT_INSTALL_DIR/authn.anon
 ./setup configure
 asadmin start-domain localhost
 
@@ -88,6 +89,11 @@ user.ingest.password = ingest
 user.stuart.password = stuart
 
 mechanism = simple" > $ICAT_INSTALL_DIR/authn.simple/authn_simple.properties
+
+cd $ICAT_INSTALL_DIR/authn.simple
+./setup configure
+./setup install
+cd $ICAT_INSTALL_DIR
 
 #
 # Set up ICAT Server
@@ -181,7 +187,8 @@ mkdir -p $HOME/bin
 
 # Install ICAT Server
 cd $ICAT_INSTALL_DIR/icat.server
-./setup -vv install
+./setup configure
+./setup install
 
 cd $ICAT_INSTALL_DIR
 
@@ -208,7 +215,7 @@ container = Glassfish
 home = $HOME/glassfish4
 port = 4848" > $ICAT_INSTALL_DIR/ids.storage_file/ids.storage_file-setup.properties
 
-cd ids.storage_file
+cd $ICAT_INSTALL_DIR/ids.storage_file
 ./setup configure
 ./setup -vv install
 cd $ICAT_INSTALL_DIR
@@ -218,7 +225,7 @@ wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproj
 
 unzip -o -q /vagrant/ids.server-1.7.0-distro.zip
 
-cd ids.server
+cd $ICAT_INSTALL_DIR/ids.server
 
 mkdir -p $ICAT_DATA_DIR/ids
 
@@ -275,8 +282,8 @@ log.list = READ WRITE
 # JMS - uncomment and edit if needed
 !jms.topicConnectionFactory = java:comp/DefaultJMSConnectionFactory" > $ICAT_INSTALL_DIR/ids.server/ids.properties 
 
-./setup -vv configure
-./setup -vv install
+./setup configure
+./setup install
 cd $ICAT_INSTALL_DIR
 
 #
