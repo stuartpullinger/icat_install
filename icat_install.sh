@@ -11,7 +11,7 @@ cd $HOME
 wget --no-verbose --no-clobber --directory-prefix=/vagrant http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip
 
 # unzip glassfish
-unzip -q /vagrant/glassfish-4.0.zip
+unzip -o -q /vagrant/glassfish-4.0.zip
 
 # add glassfish directory to path - reprovisioning will run this again, adding the same string to the end of the PATH. Probably not good. :(
 echo 'export PATH=$PATH:$HOME/glassfish4/bin' >> $HOME/.bashrc
@@ -41,7 +41,7 @@ mkdir $ICAT_INSTALL_DIR
 wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.anon/1.1.1/authn.anon-1.1.1-distro.zip
 
 # unzip anonymous authentication package
-unzip -q /vagrant/authn.anon-1.1.1-distro.zip
+unzip -o -q /vagrant/authn.anon-1.1.1-distro.zip
 
 # configure the properties files
 echo "#Glassfish
@@ -70,7 +70,7 @@ cd $ICAT_INSTALL_DIR
 wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.simple/1.1.0/authn.simple-1.1.0-distro.zip
 
 # unzip
-unzip -q /vagrant/authn.simple-1.1.0-distro.zip
+unzip -o -q /vagrant/authn.simple-1.1.0-distro.zip
 
 # configure the setup properties files
 echo "#Glassfish
@@ -96,7 +96,7 @@ mechanism = simple" > $ICAT_INSTALL_DIR/authn.simple/authn_simple.properties
 wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/icat.server/4.8.0/icat.server-4.8.0-distro.zip
 
 # unzip ICAT server package
-unzip -q /vagrant/icat.server-4.8.0-distro.zip
+unzip -o -q /vagrant/icat.server-4.8.0-distro.zip
 
 # configure the icat-setup.properties file
 echo "#Glassfish
@@ -192,7 +192,7 @@ cd $ICAT_INSTALL_DIR
 # install File storage plugin first
 wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/ids.storage_file/1.3.3/ids.storage_file-1.3.3-distro.zip
 
-unzip -q /vagrant/ids.storage_file-1.3.3-distro.zip
+unzip -o -q /vagrant/ids.storage_file-1.3.3-distro.zip
 
 # make directories to store data
 ICAT_DATA_DIR=$HOME/icat/data
@@ -216,7 +216,7 @@ cd $ICAT_INSTALL_DIR
 # install the IDS
 wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/ids.server/1.7.0/ids.server-1.7.0-distro.zip
 
-unzip -q /vagrant/ids.server-1.7.0-distro.zip
+unzip -o -q /vagrant/ids.server-1.7.0-distro.zip
 
 cd ids.server
 
