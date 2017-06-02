@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
 ICAT_INSTALL_DIR=$HOME/icat_install
 cd $HOME
@@ -8,16 +8,16 @@ cd $HOME
 #
 
 # Download glassfish
-wget --no-clobber --directory-prefix=/vagrant http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant http://download.java.net/glassfish/4.0/release/glassfish-4.0.zip
 
 # unzip glassfish
-unzip /vagrant/glassfish-4.0.zip
+unzip -q /vagrant/glassfish-4.0.zip
 
 # add glassfish directory to path - reprovisioning will run this again, adding the same string to the end of the PATH. Probably not good. :(
 echo 'export PATH=$PATH:$HOME/glassfish4/bin' >> $HOME/.bashrc
 
 # download glassfish setup script
-wget --no-clobber --directory-prefix=/vagrant https://icatproject.org/misc/scripts/setup-glassfish.py
+wget --no-verbose --no-clobber --directory-prefix=/vagrant https://icatproject.org/misc/scripts/setup-glassfish.py
 
 # run glassfish setup script
 python /vagrant/setup-glassfish.py localhost 75% pw
@@ -37,10 +37,10 @@ mkdir $ICAT_INSTALL_DIR
 #
 
 # download ICAT anonymous authentication package
-wget --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.anon/1.1.1/authn.anon-1.1.1-distro.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.anon/1.1.1/authn.anon-1.1.1-distro.zip
 
 # unzip anonymous authentication package
-unzip /vagrant/authn.anon-1.1.1-distro.zip
+unzip -q /vagrant/authn.anon-1.1.1-distro.zip
 
 # configure the properties files
 echo "#Glassfish
@@ -66,10 +66,10 @@ cd $ICAT_INSTALL_DIR
 #
 
 # download ICAT simple authentication plugin
-wget --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.simple/1.1.0/authn.simple-1.1.0-distro.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/authn.simple/1.1.0/authn.simple-1.1.0-distro.zip
 
 # unzip
-unzip /vagrant/authn.simple-1.1.0-distro.zip
+unzip -q /vagrant/authn.simple-1.1.0-distro.zip
 
 # configure the setup properties files
 echo "#Glassfish
@@ -92,10 +92,10 @@ mechanism = simple" > $ICAT_INSTALL_DIR/authn.simple/authn_simple.properties
 # Set up ICAT Server
 #
 
-wget --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/icat.server/4.8.0/icat.server-4.8.0-distro.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/icat.server/4.8.0/icat.server-4.8.0-distro.zip
 
 # unzip ICAT server package
-unzip /vagrant/icat.server-4.8.0-distro.zip
+unzip -q /vagrant/icat.server-4.8.0-distro.zip
 
 # configure the icat-setup.properties file
 echo "#Glassfish
@@ -189,9 +189,9 @@ cd $ICAT_INSTALL_DIR
 #
 
 # install File storage plugin first
-wget --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/ids.storage_file/1.3.3/ids.storage_file-1.3.3-distro.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant http://www.icatproject.org/mvn/repo/org/icatproject/ids.storage_file/1.3.3/ids.storage_file-1.3.3-distro.zip
 
-unzip /vagrant/ids.storage_file-1.3.3-distro.zip
+unzip -q /vagrant/ids.storage_file-1.3.3-distro.zip
 
 # make directories to store data
 ICAT_DATA_DIR=$HOME/icat/data
@@ -213,9 +213,9 @@ cd ids.storage_file
 cd $ICAT_INSTALL_DIR
 
 # install the IDS
-wget --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/ids.server/1.7.0/ids.server-1.7.0-distro.zip
+wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/ids.server/1.7.0/ids.server-1.7.0-distro.zip
 
-unzip /vagrant/ids.server-1.7.0-distro.zip
+unzip -q /vagrant/ids.server-1.7.0-distro.zip
 
 cd ids.server
 
@@ -282,7 +282,7 @@ cd $ICAT_INSTALL_DIR
 # Create and load some test data
 #
 
-wget --no-clobber --directory-prefix=/vagrant https://raw.githubusercontent.com/icatproject/topcat/master/tools/lorum_facility_generator.rb
+wget --no-verbose --no-clobber --directory-prefix=/vagrant https://raw.githubusercontent.com/icatproject/topcat/master/tools/lorum_facility_generator.rb
 
 # Change the hard-coded root password in the script
 sed -e '/password/ s/root/pw/g' /vagrant/lorum_facility_generator.rb > /vagrant/test_data_generator.rb
