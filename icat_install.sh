@@ -55,11 +55,9 @@ echo "#Glassfish
 ip = 127.0.0.1
 mechanism = anon" > $ICAT_INSTALL_DIR/authn.anon/authn_anon.properties
 
+# install anonymous authentication package
 cd $ICAT_INSTALL_DIR/authn.anon
 ./setup configure
-asadmin start-domain localhost
-
-# install anonymous authentication package
 ./setup install
 cd $ICAT_INSTALL_DIR
 
@@ -106,7 +104,7 @@ unzip -o -q /vagrant/icat.server-4.8.0-distro.zip
 
 # configure the icat-setup.properties file
 echo "#Glassfish
-secure = false                                                                                                                        container = Glassfish
+secure = false
 container = Glassfish
 home = $HOME/glassfish4
 port = 4848
