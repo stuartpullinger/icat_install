@@ -31,7 +31,7 @@ cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/do
 #
 # Install ICAT components
 #
-mkdir $ICAT_INSTALL_DIR
+mkdir -p $ICAT_INSTALL_DIR
 
 #
 # Set up anonymous authentication
@@ -177,7 +177,7 @@ lucene.commitCount = 10000
 # configure the icat.logback.xml file
 
 # create the ~/bin dir
-mkdir $HOME/bin
+mkdir -p $HOME/bin
 
 # Install ICAT Server
 cd $ICAT_INSTALL_DIR/icat.server
