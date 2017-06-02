@@ -7,22 +7,22 @@ GLASSFISH_USER=glassfish
 # yum update
 
 # Set up preferred developer environment
-yum --assumeyes install vim screen
+yum --quiet --assumeyes install vim screen
 cp /vagrant/vimrc /home/vagrant/.vimrc
 cp /vagrant/screenrc /home/vagrant/.screenrc
 
 # Install dependencies
-yum --assumeyes install java-1.8.0-openjdk-headless wget unzip
+yum --quiet --assumeyes install java-1.8.0-openjdk-headless wget unzip
 
 # Install ICAT Server dependencies
 # Ugh! mysql-connector-java depends on full java not headless so this pulls in X11 libs!
 # python-requests - undocumented dependency for testicat program
 # ruby and rubygems for creating and loading test data
-yum --assumeyes install mysql-server mysql MySQL-python python-suds python-requests mysql-connector-java 
+yum --quiet --assumeyes install mysql-server mysql MySQL-python python-suds python-requests mysql-connector-java 
 
 # Install dependencies for ruby installer
 # (ruby version in repo is too old for data creation script so we have to install/build from elsewhere)
-yum install --assumeyes patch libyaml-devel glibc-headers autoconf gcc-c++ glibc-devel patch readline-devel zlib-devel libffi-devel openssl-devel automake libtool bison sqlite-devel
+yum --quiet --assumeyes install patch libyaml-devel glibc-headers autoconf gcc-c++ glibc-devel patch readline-devel zlib-devel libffi-devel openssl-devel automake libtool bison sqlite-devel
 
 # Configure MySQL
 
