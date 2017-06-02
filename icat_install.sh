@@ -107,6 +107,7 @@ unzip -o -q /vagrant/icat.server-4.8.0-distro.zip
 # configure the icat-setup.properties file
 echo "#Glassfish
 secure = false                                                                                                                        container = Glassfish
+container = Glassfish
 home = $HOME/glassfish4
 port = 4848
 
