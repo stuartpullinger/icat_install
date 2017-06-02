@@ -13,6 +13,9 @@ wget --no-verbose --no-clobber --directory-prefix=/vagrant http://download.java.
 # unzip glassfish
 unzip -o -q /vagrant/glassfish-4.0.zip
 
+# Copy the MySQL Connector jar file - do this before we start glassfish
+cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/domains/localhost/lib/ext/
+
 # add glassfish directory to path - reprovisioning will run this again, adding the same string to the end of the PATH. Probably not good. :(
 echo 'export PATH=$PATH:$HOME/glassfish4/bin' >> $HOME/.bashrc
 source $HOME/.bashrc
@@ -22,11 +25,6 @@ wget --no-verbose --no-clobber --directory-prefix=/vagrant https://icatproject.o
 
 # run glassfish setup script
 python /vagrant/setup-glassfish.py localhost 75% pw
-
-#
-# Copy the MySQL Connector jar file
-#
-cp /usr/share/java/mysql-connector-java-5.1.17.jar $HOME/glassfish4/glassfish/domains/localhost/lib/ext/
 
 #
 # Install ICAT components
