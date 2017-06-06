@@ -7,7 +7,7 @@ GLASSFISH_USER=glassfish
 # yum update
 
 # Set up preferred developer environment
-yum --quiet --assumeyes install vim screen
+yum --quiet --assumeyes install vim screen man
 cp /vagrant/vimrc /home/vagrant/.vimrc
 cp /vagrant/screenrc /home/vagrant/.screenrc
 
