@@ -301,3 +301,55 @@ gem install faker rest-client
 
 # Run the data creation script
 ruby /vagrant/test_data_generator.rb
+
+#
+# Install TopCat
+#
+
+# download and unzip TopCat
+
+wget --no-verbose --no-clobber --directory-prefix=/vagrant https://repo.icatproject.org/repo/org/icatproject/topcat/2.2.1/topcat-2.2.1-distro.zip
+
+unzip -o -q /vagrant/topcat-2.2.1-distro.zip
+
+# Configure topcat-setup.properties
+echo "#Glassfish
+secure = false
+container = Glassfish
+home = $HOME/glassfish4
+port = 4848
+
+# MySQL
+db.target      = mysql
+db.driver      = com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+db.url         = jdbc:mysql://localhost:3306/icat
+db.username    = icat
+db.password    = icat
+
+# Email setup
+mail.enable = false" > $ICAT_INSTALL_DIR/topcat/topcat-setup.properties
+
+# Configure topcat.properties
+echo "# Email setup - why twice?
+mail.enable = false
+
+ids.getStatus.max = 100
+poll.delay = 600
+poll.interval.wait = 600
+
+adminUserNames = simple/root" > $ICAT_INSTALL_DIR/topcat/topcat.properties
+
+# Configure other files
+# topcat.json
+# lang.json - interface strings - just copy example
+# topcat.css - change styling - just copy example
+
+cd $ICAT_INSTALL_DIR/topcat
+
+sed -e 's/https/http/g; s/8181/8080/g; s/your facility name[^"]*/LILS/g' topcat.json.example >topcat.json
+cp lang.json.example lang.json
+cp topcat.css.example topcat.css
+
+./setup configure
+./setup install
+cd $ICAT_INSTALL_DIR
