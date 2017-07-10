@@ -22,11 +22,11 @@ The first component we will install is an authentication plugin which will handl
 
 At the time of writing this tutorial, the current stable version of the ICAT Server - the main component of the ICAT software - is 4.8.0. This will be the version installed in this tutorial along with its dependencies. The full list of software and components installed in this tutorial are listed below:
 
-OpenJDK Java 1.8.0
-GlassFish 4.0
-MySQL 5.1
-Simple Authenticator [1.1.0](https://repo.icatproject.org/site/authn/simple/1.1.0/)
-ICAT Server [4.8.0](https://repo.icatproject.org/site/icat/server/4.8.0/)
-IDS Storage File plugin [1.3.3](https://repo.icatproject.org/site/ids/storage_file/1.3.3/)
-ICAT Data Server (IDS) [1.7.0](https://repo.icatproject.org/site/ids/server/1.7.0/)
-TopCat [2.2.1](https://repo.icatproject.org/site/topcat/2.2.1/)
+- OpenJDK Java 1.8.0
+- GlassFish 4.0
+- MySQL 5.1
+- Simple Authenticator [1.1.0](https://repo.icatproject.org/site/authn/simple/1.1.0/)
+- ICAT Server [4.8.0](https://repo.icatproject.org/site/icat/server/4.8.0/)
+- IDS Storage File plugin [1.3.3](https://repo.icatproject.org/site/ids/storage_file/1.3.3/)
+- ICAT Data Server (IDS) [1.7.0](https://repo.icatproject.org/site/ids/server/1.7.0/)
+- TopCat [2.2.1](https://repo.icatproject.org/site/topcat/2.2.1/)
