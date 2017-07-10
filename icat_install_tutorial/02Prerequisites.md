@@ -9,7 +9,12 @@ Chapter 02: Prerequisites
 Overview
 --------
 
-The ICAT software is written in the Java programming language with some additional tools written in Python. The application runs in a Java application server and uses a relational database to store its data. In this tutorial we will be installing the GlassFish Java application server and the MySQL database. All of the commands on this page should be entered as the `root` user.
+The ICAT software is written in the Java programming language with some additional tools written in Python. The application runs in a Java application server and uses a relational database to store its data. In this tutorial we will be installing the GlassFish Java application server and the MySQL database. 
+
+All of the commands on this page should be entered as the `root` user so let's change to the `root` user:
+```Shell
+sudo -i
+```
 
 Install Java
 ------------
