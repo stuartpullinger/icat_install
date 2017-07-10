@@ -16,6 +16,10 @@ This tutorial assumes that you have access to a system (or virtual machine) with
 Software Versions
 -----------------
 
+Before we start installing the ICAT Software, we will install the prerequisites: OpenJDK Java, the GlassFish application server which hosts the software and the MySQL database. Other versions of Java will work with the ICAT Software including Oracle's [Java](http://www.oracle.com/technetwork/indexes/downloads/index.html). The ICAT software can also be used with the [Payara](https://www.payara.fish/) or [Wildfly](http://wildfly.org/) application servers. (*N.B. Future versions of this tutorial will use Payara*). Finally, it is also possible to use an Oracle [database](https://www.oracle.com/database/index.html) in place of MySQL.
+
+The first component we will install is an authentication plugin which will handle authenticating users to all the subsequent components. Next to be installed will be the ICAT Server which authenticates users, allows access to the data catalogue through its APIs and coordinates the ICAT Data Service. A storage plugin will be installed to provide access to the file system for the ICAT Data Service (IDS). The IDS controls access to the data files in the ICAT catalogue and will be installed next. After creating some test data, we will install the TopCat web interface which provides an easy to use interface to the ICAT Software.
+
 At the time of writing this tutorial, the current stable version of the ICAT Server - the main component of the ICAT software - is 4.8.0. This will be the version installed in this tutorial along with its dependencies. The full list of software and components installed in this tutorial are listed below:
 
 OpenJDK Java 1.8.0
