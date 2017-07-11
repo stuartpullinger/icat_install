@@ -12,7 +12,7 @@ This repository contains configuration and scripts for installing [ICAT](http://
 - [Introduction](icat_install_tutorial/00Introduction.md)
 - [Vagrant Setup](icat_install_tutorial/01VagrantSetup.md)
 - [Prerequisites](icat_install_tutorial/02Prerequisites.md)
-- [Installing Glassfish](icat_install_tutorial/03InstallingGlassfish.md)
+- [Installing Glassfish](icat_install_tutorial/03InstallingGlassFish.md)
 - [Installing Authentication](icat_install_tutorial/04InstallingAuthentication.md)
 - [Installing ICAT Server](icat_install_tutorial/05InstallingICATServer.md)
 - [Installing a Storage Plugin](icat_install_tutorial/06InstallingStoragePlugin.md)
