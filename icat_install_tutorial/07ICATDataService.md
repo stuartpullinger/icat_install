@@ -29,7 +29,7 @@ container = Glassfish
 home = /home/glassfish/glassfish4
 port = 4848
 
-Any libraries needed (space separated list of jars in domain's lib/applibs
+#Any libraries needed (space separated list of jars in domain's lib/applibs
 libraries=ids.storage_file*.jar
 ```
 
@@ -95,7 +95,6 @@ Install the IDS
 ---------------
 As before:
 ```Shell
-./setup -vv configure
 ./setup -vv install
 ```
 

@@ -64,6 +64,5 @@ Install TopCat
 --------------
 As before
 ```Shell
-./setup -vv configure
 ./setup -vv install
 ```

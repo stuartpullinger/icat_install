@@ -52,6 +52,5 @@ Install the Storage Plugin
 --------------------------
 As before:
 ```Shell
-./setup -vv configure
 ./setup -vv install
 ```

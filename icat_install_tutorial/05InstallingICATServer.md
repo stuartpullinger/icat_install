@@ -20,7 +20,7 @@ unzip icat.server-4.8.0-distro.zip
 Configure the ICAT Server
 -------------------------
 
-Change directory to the `icat.server` directory and open the `icat-setup.properties` file. It has 2 sections. The first will be familiar from the authentication plugin in Chapter 4 where we set `secure` to `false` and configured the `container`, its location and port. The second section tells ICAT how to access the MySQL database. The `db.driver` parameter specifies the location of the database access code - in the jar file which we copied earlier. You should not need to change this. The `db.url` parameter tells ICAT where to contact the database. In this case, it uses the jdbc-mysql connector to access the local machine on port 3306 (the default for MySQL) and uses the `icat` database. Finally, we specify the database username and password for ICAT to use. We created these in Chapter 2.
+Change directory to the `icat.server` directory and open the `icat-setup.properties` file. It has 2 sections. The first will be familiar from the authentication plugin in Chapter 4 where we set `secure` to `false` and configured the `container`, its location and port. The second section tells ICAT how to access the MySQL database. The `db.driver` parameter specifies the location of the database access code - in the jar file which we copied earlier. The `db.url` parameter tells ICAT where to contact the database. In this case, it uses the jdbc-mysql connector to access the local machine on port 3306 (the default for MySQL) and uses the `icat` database. Finally, we specify the database username and password for ICAT to use. We created these in Chapter 2.
 ```INI
 #Glassfish
 secure = false
@@ -114,7 +114,6 @@ Install the ICAT Server
 -----------------------
 As before:
 ```Shell
-./setup -vv configure
 ./setup -vv install
 ```
 

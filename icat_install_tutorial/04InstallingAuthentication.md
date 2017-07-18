@@ -8,7 +8,7 @@ Chapter 04: Installing an Authentication Plugin
 Overview
 --------
 
-ICAT relies on plugins to handle different methods of authenticating users to the system. There are 4 plugins available: an anonymous plugin allowing anonymous users; a simple plugin allowing a list of usernames and passwords to be defined at install time; an LDAP plugin to connect to an LDAP server and a database plugin which re-uses the relational database to store the usernames and passwords. In this tutorial, we will use the simple authentication plugin.
+ICAT relies on plugins to handle different methods of authenticating users to the system. There are 4 plugins available: an anonymous plugin allowing anonymous users; a simple plugin allowing a list of usernames and passwords to be defined at install time; an LDAP plugin to connect to an LDAP server and a database plugin which re-uses the relational database to store the usernames and passwords. In this tutorial, we will use the simple authentication plugin. However, it is worth noting that most facilities who use the ICAT software write their own plugin. 
 
 Download and unzip
 ------------------
@@ -47,9 +47,8 @@ mechanism = simple
 Install the authentication plugin
 ---------------------------------
 
-Installing most ICAT components consists of the same process `./setup configure` followed by `./setup install`. We use the `-vv` flags here to turn on extra verbosity so that we can see what the setup script is doing.
+Installing most ICAT components consists running `./setup install`. We use the `-vv` flag here to turn on extra verbosity so that we can see what the setup script is doing.
 
 ```Shell
-./setup -vv configure
 ./setup -vv install
 ```
