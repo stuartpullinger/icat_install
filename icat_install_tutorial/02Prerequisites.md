@@ -69,9 +69,10 @@ The GlassFish Application Server should be run under its own account so let's ma
 
 ```Shell
 useradd glassfish
+passwd glassfish
 ```
 
 For the rest of this tutorial, it is assumed that you will use the `glassfish` user account, unless stated otherwise, so let's switch to it.
 ```Shell
-su glassfish
+su - glassfish
 ```
