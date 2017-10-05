@@ -41,7 +41,7 @@ Edit the MySQL configuration file at `/etc/my.cnf`. In the `[mysqld]` section, s
 default_storage_engine = InnoDB
 ```
 
-Start the MySQL database then run `mysql-secure-installation` to make it more secure. Enter the details when prompted. In this tutorial, we assume the database root user has the password 'pw'.
+Start the MySQL database then run `mysql-secure-installation` to make it more secure. (On some systems - Scientific Linux 6, for example - the command is `mysql_secure_installation`. Note the underscores in place of dashes). Enter the details when prompted. In this tutorial, we assume the database root user has the password 'pw'.
 
 ```Shell
 service mysqld start
