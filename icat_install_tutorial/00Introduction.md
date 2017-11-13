@@ -6,7 +6,7 @@ This tutorial will lead you through the process of installing and configuring a 
 Aim
 ---
 
-The aim of this tutorial is to give the reader a introduction to the ICAT software and the process of installing and configuring it. The result of following this tutorial will be a system with enough of the ICAT components installed to allow the user to test the functionality of the software. It is important to note that the resulting system will not be fault-tolerant or secure enough to use in a production environment. It should, however, be sufficient to allow the user to load some data and interact with it to understand how the components relate to one another.
+The aim of this tutorial is to give the reader an introduction to the ICAT software and the process of installing and configuring it. The result of following this tutorial will be a system with enough of the ICAT components installed to allow the user to test the functionality of the software. It is important to note that the resulting system will not be fault-tolerant or secure enough to use in a production environment. It should, however, be sufficient to allow the user to load some data and interact with it to understand how the components relate to one another.
 
 Before You Start
 ----------------

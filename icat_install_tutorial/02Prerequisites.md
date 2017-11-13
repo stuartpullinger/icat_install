@@ -19,7 +19,7 @@ sudo -i
 Install Java
 ------------
 
-ICAT requires at least JDK verion 1.8. Since ICAT is distributed online as a collection of .zip files, we will also need to install curl, wget and unzip (on the minimal linux operating system used for this tutorial - other OSes may have them pre-installed).
+ICAT requires at least JDK version 1.8. Since ICAT is distributed online as a collection of .zip files, we will also need to install curl, wget and unzip (on the minimal linux operating system used for this tutorial - other OSes may have them pre-installed).
 
 ```Shell
 yum install java-1.8.0-openjdk-devel curl wget unzip

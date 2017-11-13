@@ -31,7 +31,7 @@ home = /home/glassfish/glassfish4
 port = 4848
 ```
 
-In the same directory, you will need to configure the list of usernames and passwords in the `authn_simple.properties` file. For this tutorial, we will define 3 users: root, ingest and stuart. The `mechanism` option is used to label this authentication mechanism and is useful when there is more than one authentication plugin installed. For example, if there was a user called `stuart` in the simple authenticator *and* the db authenticator, then we would refer to the user in the simple authenticator as `simple/stuart` and the user in the db authenticator as `db/stuart`. In this way we can be clear which user we mean. In some ICAT documentation, the `mechanism` is referred to as `mnemonic`. The two terms can be used interchangably.
+In the same directory, you will need to configure the list of usernames and passwords in the `authn_simple.properties` file. For this tutorial, we will define 3 users: root, ingest and stuart. The `mechanism` option is used to label this authentication mechanism and is useful when there is more than one authentication plugin installed. For example, if there was a user called `stuart` in the simple authenticator *and* the db authenticator, then we would refer to the user in the simple authenticator as `simple/stuart` and the user in the db authenticator as `db/stuart`. In this way we can be clear which user we mean. In some ICAT documentation, the `mechanism` is referred to as `mnemonic`. The two terms can be used interchangeably.
 
 ```Shell
 #User list
